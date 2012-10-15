@@ -13,6 +13,7 @@ group :development, :test do
   gem 'capybara'
   gem 'launchy'
   gem 'rspec'
+  gem 'rspec-rails'
 end
 group :test do
   gem 'cucumber-rails'

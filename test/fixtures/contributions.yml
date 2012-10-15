@@ -1,0 +1,17 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/Fixtures.html
+
+one:
+  date: 2012-10-14
+  contributor: MyString
+  amount: 9.99
+  city: MyString
+  state: MyString
+  recipient: MyString
+
+two:
+  date: 2012-10-14
+  contributor: MyString
+  amount: 9.99
+  city: MyString
+  state: MyString
+  recipient: MyString
