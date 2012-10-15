@@ -1,0 +1,13 @@
+%h1 Search#index
+
+= form_tag('/contribution', :method => :put) do
+
+  = label :contribution, :contributor, 'From'
+  = text_field :contribution, 'from'
+
+  = label :contribution, :to, 'To'
+  = text_field :contribution, 'to'
+
+  = submit_tag 'Search'
+
+=link_to 'See all contributions', all_path

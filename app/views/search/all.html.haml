@@ -1,0 +1,21 @@
+%h1 Search#index
+%p Find me in app/views/search/all.html.haml
+
+%table#contributions
+	%thead
+		%tr
+			%th Date
+			%th Contributor
+			%th Amount
+			%th City 
+			%th State
+			%th Recipient
+	%tbody
+		- @contributions.each do |contribution|
+			%tr
+				%td= contribution.date 
+				%td= contribution.contributor
+				%td= contribution.amount
+				%td= contribution.city
+				%td= contribution.state
+				%td= contribution.recipient
