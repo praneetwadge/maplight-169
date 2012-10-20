@@ -1,6 +1,11 @@
 class SearchController < ApplicationController
-  def index
-		@contributions = Contribution.find(:all)
+  def results
+		if params[:query] == 'all'
+			@contributions = Contribution.find(:all)
+	  else
+			@contributions = Contribution.find(1)
+		end
   end
-
+	def index
+	end
 end

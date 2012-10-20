@@ -1,4 +1,4 @@
-%h1 Search#index
+%h1 Search
 
 = form_tag('/contribution', :method => :put) do
 
@@ -10,4 +10,4 @@
 
   = submit_tag 'Search'
 
-=link_to 'See all contributions', all_path
+=link_to 'See all contributions', results_path('all')

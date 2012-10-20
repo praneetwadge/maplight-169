@@ -1,6 +1,7 @@
 Maplight::Application.routes.draw do
   #get "search/index"
-	match '/search/all' => 'search#all', :as => :all
+	match '/search/results/:query' => 'search#results', :as => :results
+	match '/search' => 'search#index'
 	resources :contributions
   root :to => 'search#index'
 end
