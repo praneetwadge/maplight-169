@@ -16,7 +16,7 @@ contributions = [{:date => Date.new(2010, 11, 4), :contributor => "Jeanne Buell"
 								{:date => Date.new(2012, 10, 13), :contributor => "Praneet Wagde", :amount => 200, :city => "Berkeley", :state => "CA", :recipient => "Jane Smith"},
 								{:date => Date.new(2012, 10, 14), :contributor => "Praneet Wagde", :amount => 200, :city => "Berkeley", :state => "CA", :recipient => "Jane Smith"},
 								{:date => Date.new(2012, 10, 12), :contributor => "Praneet W", :amount => 300, :city => "Berkeley", :state => "CA", :recipient => "Jane Smith"},
-								{:date => Date.new(2012, 10, 12), :contributor => "P Wagde", :amount => 150, :city => "Berkeley", :state => "CA", :recipient => "Jane Smith"}]
+								{:date => Date.new(2012, 10, 12), :contributor => "P Wagde", :amount => 150, :city => "Berkeley", :state => "CA", :recipient => "Jane Smith"},]
 
 contributions.each do |contribution|
 	Contribution.create!(contribution)
