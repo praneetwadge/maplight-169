@@ -7,7 +7,7 @@ Feature: Search for contributions to legislation or candidate
   Background:
     Given I am on the home page
     Given the following contributions exist:
-    | from              | to              |
+    | donor             | recipient       |
     | Varun Pai         | Nancy Pelosi    | 
     | Ayushi Samaddar   | Ronald Reagan   | 
     | Praneet Wadge     | Ronald Reagan   |
