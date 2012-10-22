@@ -11,8 +11,8 @@
       %tbody
       - @contributions.each do |contribution|
         %tr
-          %td= contribution.from 
-          %td= contribution.to
+          %td= contribution.donor 
+          %td= contribution.recipient
           %td= contribution.amount
           %td= contribution.city
           %td= contribution.state
