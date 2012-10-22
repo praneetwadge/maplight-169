@@ -1,13 +1,13 @@
 %h1 Search
 
-= form_tag('/contribution', :method => :put) do
+= form_tag results_path :method => :get do
 
-  = label :contribution, :contributor, 'From'
-  = text_field :contribution, 'from'
+  = label_tag 'donor', 'Donor' 
+  = text_field_tag 'donor' 
 
-  = label :contribution, :to, 'To'
-  = text_field :contribution, 'to'
+  = label_tag 'recipient', 'Recipient'
+  = text_field_tag 'recipient' 
 
   = submit_tag 'Search'
 
-=link_to 'See all contributions', results_path('all')
+= link_to 'See all contributions', results_path
