@@ -37,7 +37,7 @@ describe SearchController do
     it 'should go back to the search page if no results found' do
       no_result = double('contribution').as_null_object
       Contribution.stub(:find).and_return(no_result)
-      get :results, {:donor => 'Jeanne Buell', :recipient => 'Nancy Pelosi'}
+      get :results
       response.should redirect_to(search_path)
     end   
   end   

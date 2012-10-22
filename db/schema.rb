@@ -14,8 +14,8 @@
 ActiveRecord::Schema.define(:version => 20121021232230) do
 
   create_table "contributions", :force => true do |t|
-    t.string   "donor"
-    t.string   "recipient"
+    t.string   "from"
+    t.string   "to"
     t.decimal  "amount"
     t.date     "date"
     t.string   "city"
