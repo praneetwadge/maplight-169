@@ -3,6 +3,7 @@ class CreateContributions < ActiveRecord::Migration
     create_table :contributions do |t|
       t.string :from
       t.string :to
+      t.decimal :amount
       t.date :date
       t.string :city
       t.string :state

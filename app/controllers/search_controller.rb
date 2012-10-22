@@ -7,12 +7,12 @@ class SearchController < ApplicationController
     donor = params[:donor]
     recipient = params[:recipient]
 
-    if donor and recipient 
+    if donor != '' and recipient != ''
       @contributions = Contribution.find(:all, :conditions => { :from => donor, :to => recipient })
-    elsif donor 
+    elsif donor != '' 
       # only donor filled in 
       @contributions = Contribution.find(:all, :conditions => { :from => donor })
-    elsif recipient 
+    elsif recipient != ''
       # only recipient filled in 
       @contributions = Contribution.find(:all, :conditions => { :to => recipient })
     else
