@@ -8,6 +8,8 @@ class SearchController < ApplicationController
     recipient = params[:recipient]
 
     if donor != '' and recipient != ''
+      @donor = donor
+      @recipient = recipient
       @contributions = Contribution.find(:all, :conditions => ["donor LIKE ? and recipient LIKE ?" , '%'+donor+'%', '%'+recipient+'%'])
     elsif donor != '' 
       # only donor filled in 

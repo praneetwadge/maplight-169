@@ -19,14 +19,15 @@ Feature: Search for contributions to legislation or candidate
     When I fill in "Donor" with "Buell"
     And I fill in "Recipient" with "Nancy Pelosi"
     And I press "Search" 
-    Then I should see the results page
-    And I should see "Displaying 2 selected contributors to Nancy Pelosi"
+    Then I should be on the results page
+    And I should see "Jeanne Buell"
+    And I should see "J.A Buell"
    
   Scenario: Search for particular donor and specific politician (without disambiguation)
     When I fill in "Donor" with "Ayushi Samaddar"
     And I fill in "Recipient" with "Ronald Reagan"
     And I press "Search"
-    Then I should see the results page
+    Then I should be on the results page
     And I should see "Contributions from Ayushi Samaddar to Ronald Reagan"
     And I should see "Ayushi Samaddar"
     And I should not see "Praneet Wadge"

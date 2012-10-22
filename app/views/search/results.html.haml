@@ -1,5 +1,12 @@
 %h1 Search
 
+- if defined? @donor and defined? @recipient
+  %p= ('Contributions from ' + @donor + ' to ' + @recipient)
+- elsif defined? @donor
+  %p= ('Contributions from ' + @donor)
+- elsif defined? @recipient
+  %p= ('Contributions to ' + @recipient) 
+
 %table#contributions
   %thead
     %tr
