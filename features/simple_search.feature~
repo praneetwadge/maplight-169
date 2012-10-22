@@ -6,12 +6,20 @@ Feature: Search for contributions to legislation or candidate
 
   Background:
     Given I am on the home page
+    Given the following contributions exist:
+    | from              | to              |
+    | Varun Pai         | Nancy Pelosi    | 
+    | Ayushi Samaddar   | Ronald Reagan   | 
+    | Praneet Wadge     | Ronald Reagan   |
+    | Praneet Wadge     | Jerry Brown     |
+    | Jeanne Buell      | Nancy Pelosi    |
+    | J.A Buell         | Nancy Pelosi    |
 
   Scenario: Search for particular donor and specific politician (with disambiguation)
-    When I fill in "Donor" with "Jeanne Buell"
+    When I fill in "Donor" with "Buell"
     And I fill in "Recipient" with "Nancy Pelosi"
     And I press "Search"
-    Then I should be on the disambiguation page # > one person id matches!
+    Then I should be on the disambiguation page for "Buell"
     When I check the following people: Jeanne Buell, J A Buell 
     Then I should see the results page
     And I should see "Displaying 2 selected contributors to Nancy Pelosi"
@@ -20,25 +28,22 @@ Feature: Search for contributions to legislation or candidate
     When I fill in "Donor" with "Ayushi Samaddar"
     And I fill in "Recipient" with "Ronald Reagan"
     And I press "Search"
-    Then I should not be on the disambiguation page # only one Ayushi Samaddar =P
     Then I should see the results page
     And I should see "Contributions from Ayushi Samaddar to Ronald Reagan"
+    And I should see "Ayushi Samaddar"
+    And I should not see "Praneet Wadge"
 
   Scenario: Search for all contributions by one particular donor
     When I fill in "Donor" with "Praneet Wadge"
-    And I leave "Recipients" blank
     And I press "Search"
-    Then I should see the disambiguation page 
-    And I should see all donors that match "Praneet" 
-    And I should see all donors that match "Wadge"
-    And I should see all donors that match "Praneet Wadge"
-    
+    Then I should be on the results page
+    And I should see "Ronald Reagan"
+    And I should see "Jerry Brown"
 
-Scenario: Search for all contributions to one recipient
-  When I fill in "Recipients" with "Ronald Reagan"
-  And I leave "Donor" blank
-  And I press "Search"
-  Then I should see the "Results Page"
-  And I should see "Contributions to Ronald Reagan"
-  And I should see all donors who gave money to "Ronald Reagan"
-
+  Scenario: Search for all contributions to one recipient
+    When I fill in "Recipient" with "Ronald Reagan"
+    And I press "Search"
+    Then I should be on the results page
+    And I should see "Contributions to Ronald Reagan"
+    And I should see "Praneet Wadge" 
+    And I should see "Ayushi Samaddar" 
