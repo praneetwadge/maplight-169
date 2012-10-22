@@ -18,9 +18,7 @@ Feature: Search for contributions to legislation or candidate
   Scenario: Search for particular donor and specific politician (with disambiguation)
     When I fill in "Donor" with "Buell"
     And I fill in "Recipient" with "Nancy Pelosi"
-    And I press "Search"
-    Then I should be on the disambiguation page for "Buell"
-    When I check the following people: Jeanne Buell, J A Buell 
+    And I press "Search" 
     Then I should see the results page
     And I should see "Displaying 2 selected contributors to Nancy Pelosi"
    
