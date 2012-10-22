@@ -46,3 +46,9 @@ Feature: Search for contributions to legislation or candidate
     And I should see "Contributions to Ronald Reagan"
     And I should see "Praneet Wadge" 
     And I should see "Ayushi Samaddar" 
+
+  Scenario: Enter a query with no results (sad path)
+    When I fill in "Recipient" with "Armando Fox"
+    And I press "Search"
+    Then I should be on the home page
+    And I should see "Sorry, no entries matched. Please try again."

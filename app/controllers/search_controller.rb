@@ -23,6 +23,11 @@ class SearchController < ApplicationController
       # nothing filled in, show all contributions
       @contributions = Contribution.all
     end
+
+    if @contributions.count == 0
+      flash[:notice] = 'Sorry, no entries matched. Please try again.'
+      redirect_to search_path
+    end
   end
 
 end
